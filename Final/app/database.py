@@ -20,7 +20,7 @@ class Database:
         host = "34.135.163.144"
         user = "postgres"
         password = "mgispostgres"
-        db_name = "lab3"
+        db_name = "final"
         port = "5432"
 
         # Return Instance
