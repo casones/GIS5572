@@ -15,7 +15,7 @@ def home():
 
 
 @app.route("/gdd_point_accuracy")
-def weather_point():
+def gdd_point():
     db.connect()
     q = "SELECT JSON_AGG(ST_AsGeoJSON(ndawn_observations_gdd_point_diff)) FROM ndawn_observations_gdd_point_diff;"
     q_out = str(db.query(q)[0][0]).replace("'", "")
@@ -24,7 +24,7 @@ def weather_point():
 
 
 @app.route("/gdd_h3")
-def weather_h3():
+def gdd_h3():
     db.connect()
     q = "SELECT JSON_AGG(ST_AsGeoJSON(ndawn_observations_gdd_h3)) FROM ndawn_observations_gdd_h3;"
     q_out = str(db.query(q)[0][0]).replace("'", "")
@@ -33,7 +33,7 @@ def weather_h3():
 
 
 @app.route("/evapotranspiration_point_accuracy")
-def elevation_point():
+def evapotranspiration_point():
     db.connect()
     q = "SELECT JSON_AGG(ST_AsGeoJSON(ndawn_observations_pet_point_diff)) FROM ndawn_observations_pet_point_diff;"
     q_out = str(db.query(q)[0][0]).replace("'", "")
@@ -42,7 +42,7 @@ def elevation_point():
 
 
 @app.route("/evapotranspiration_h3")
-def elevation_h3():
+def evapotranspiration_h3():
     db.connect()
     q = "SELECT JSON_AGG(ST_AsGeoJSON(ndawn_observations_pet_h3)) FROM ndawn_observations_pet_h3;"
     q_out = str(db.query(q)[0][0]).replace("'", "")
